@@ -56,8 +56,43 @@ header{
     text-decoration: none;
     color: #fff;
     font-weight: 500;
+    cursor: default;
+}
+.dropdown-parent a, .dropdown-menu a{
+    cursor: pointer;
+}
+.dropdown-parent > a::after{
+    content:none;
+    font-size: 0.8em;
+    margin-left: 4px;
+}
+.dropdown-menu li{
+    padding: 8px 12px;
+    /* white-space:; */
 }
 
+.dropdown-parent{
+    position: relative;
+}
+.dropdown-menu{
+    display: none;
+    position: absolute;
+    background: #222;
+    top:100%;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0,0, 0, 0.2);
+    padding: 10px;
+    border-radius: 5px;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    min-width: 250px;
+    width: auto;
+}
+.dropdown-parent:hover .dropdown-menu{
+    display: block;
+}
 .nav-links li :hover{
     color: #aab8ff;
     font-family:Arial, Helvetica, sans-serif;
